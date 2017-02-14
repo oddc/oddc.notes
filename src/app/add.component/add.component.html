@@ -1,0 +1,11 @@
+<od-widget widget-title="Notizen" template="tpl-small-header">
+    <od-widget-header>
+    </od-widget-header>
+    <od-widget-content nospacing>
+        <oddc-noteeditor note="addController.newNote"></oddc-noteeditor>
+    </od-widget-content>
+    <od-widget-footer>
+        <button type="button" class="btn btn-panel btn-xs icon-trash-o" ng-click="addController.$state.go('list')">Abbrechen</button>
+        <button type="button" class="btn btn-panel btn-xs icon-save" ng-click="addController.addNote();"> Speichern</button>
+    </od-widget-footer>
+</od-widget>

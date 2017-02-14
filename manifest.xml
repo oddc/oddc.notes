@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget id="oddc.notes" builder="2.3.1">
+    <information>
+        <name lang="de-DE">Notizen</name>
+        <version>2.0.19</version>
+        <author>
+            <company>opta data Gruppe</company>
+            <telephone>0201 31960</telephone>
+            <fax>0201 3196222</fax>
+            <email>service@optadata-gruppe.de</email>
+            <web>http://www.optadata-gruppe.de</web>
+        </author>
+        <developer>
+            <name>Dennis Lehmann</name>
+            <email>d.lehmann@optadata-gruppe.de</email>
+        </developer>
+        <summary lang="de-DE">
+            <image>/ressources/images/small.jpg</image>
+            <text type="textile">
+                Mit diesem Widget machen Sie wichtige Notizen direkt auf Ihrem Dashboard.
+            </text>
+        </summary>
+        <description lang="de-DE">
+            <image>/ressources/images/big.jpg</image>
+            <text type="textile">
+                Das Widget ersetzt den Notizblock auf Ihrem Schreibtisch. Egal wo Sie sind: Notieren Sie sich Ihre wichtigen Dinge einfach in diesem Widget und greifen Sie jederzeit darauf zu.
+            </text>
+        </description>
+        <tags>kostenlos,opta data</tags>
+        <appearance>
+            <text-appearance>light</text-appearance>
+            <main-color>#F1C40F</main-color>
+        </appearance>
+    </information>
+    <ressources>
+        <templates lang="de-DE">
+            <template cols="1" rows="1" markup="/ressources/app.html">
+                <scripts>
+                    <script>/src/app.js</script>
+                    <script>/src/app/shared/oddc-notes.service/oddc-notes.service.js</script>
+                    <script>/src/app/shared/oddc-notelist.component/oddc-notelist.component.js</script>
+                    <script>/src/app/shared/oddc-noteeditor.component/oddc-noteeditor.component.js</script>
+                    <script>/src/app/add.component/add.component.js</script>
+                    <script>/src/app/edit.component/edit.component.js</script>
+                    <script>/src/app/list.component/list.component.js</script>
+                </scripts>
+                <styles>
+                    <style>/src/app.css</style>
+                </styles>
+            </template>
+        </templates>
+        <services>
+            <service environment="DEV" type="restful" name="loadNotes" url="http://crm-test.optadata.com:8080/odone.widgetservices/notice" method="GET"></service>
+            <service environment="DEV" type="restful" name="loadNote" url="http://crm-test.optadata.com:8080/odone.widgetservices/notice/{id}" method="GET"></service>
+            <service environment="DEV" type="restful" name="addNote" url="http://crm-test.optadata.com:8080/odone.widgetservices/notice" method="PUT"></service>
+            <service environment="DEV" type="restful" name="updateNote" url="http://crm-test.optadata.com:8080/odone.widgetservices/notice/{id}" method="POST"></service>
+            <service environment="DEV" type="restful" name="deleteNote" url="http://crm-test.optadata.com:8080/odone.widgetservices/notice/{id}" method="DELETE"></service>
+
+            <service environment="PROD" type="restful" name="loadNotes" url="https://widgetservice.optadata-one.de/notice" method="GET"></service>
+            <service environment="PROD" type="restful" name="loadNote" url="https://widgetservice.optadata-one.de/notice/{id}" method="GET"></service>
+            <service environment="PROD" type="restful" name="addNote" url="https://widgetservice.optadata-one.de/notice" method="PUT"></service>
+            <service environment="PROD" type="restful" name="updateNote" url="https://widgetservice.optadata-one.de/notice/{id}" method="POST"></service>
+            <service environment="PROD" type="restful" name="deleteNote" url="https://widgetservice.optadata-one.de/notice/{id}" method="DELETE"></service>
+        </services>
+    </ressources>
+</widget>
+
