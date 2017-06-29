@@ -2,7 +2,7 @@
 <widget id="oddc.notes" builder="2.3.2">
     <information>
         <name lang="de-DE">Notizen</name>
-        <version>2.0.20</version>
+        <version>2.0.21</version>
         <author>
             <company>opta data Gruppe</company>
             <telephone>0201 31960</telephone>
@@ -61,7 +61,15 @@
             <service environment="PROD" type="restful" name="addNote" url="https://widgetservice.optadata-one.de/notice" method="PUT"></service>
             <service environment="PROD" type="restful" name="updateNote" url="https://widgetservice.optadata-one.de/notice/{id}" method="POST"></service>
             <service environment="PROD" type="restful" name="deleteNote" url="https://widgetservice.optadata-one.de/notice/{id}" method="DELETE"></service>
-        </services>
+
+            <service environment="TEST" type="restful" name="loadNotes" url="https://widgetservice.test.optadata-one.de/notice" method="GET"></service>
+            <service environment="TEST" type="restful" name="loadNote" url="https://widgetservice.test.optadata-one.de/notice/{id}" method="GET"></service>
+            <service environment="TEST" type="restful" name="addNote" url="https://widgetservice.test.optadata-one.de/notice" method="PUT"></service>
+            <service environment="TEST" type="restful" name="updateNote" url="https://widgetservice.test.optadata-one.de/notice/{id}" method="POST"></service>
+            <service environment="TEST" type="restful" name="deleteNote" url="https://widgetservice.test.optadata-one.de/notice/{id}" method="DELETE"></service>
+            
+            
+            </services>
     </ressources>
 </widget>
 
