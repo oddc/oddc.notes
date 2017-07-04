@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget id="oddc.notes" builder="2.3.2">
+<widget id="oddc.notes" builder="3.0.0">
     <information>
         <name lang="de-DE">Notizen</name>
-        <version>2.0.21</version>
+        <version>2.0.26</version>
         <author>
             <company>opta data Gruppe</company>
             <telephone>0201 31960</telephone>
@@ -35,6 +35,9 @@
     <ressources>
         <templates lang="de-DE">
             <template cols="1" rows="1" markup="/ressources/app.html">
+                <styles>
+                    <style>/src/app.css</style>
+                </styles>
                 <scripts>
                     <script>/src/app.js</script>
                     <script>/src/app/shared/oddc-notes.service/oddc-notes.service.js</script>
@@ -44,9 +47,6 @@
                     <script>/src/app/edit.component/edit.component.js</script>
                     <script>/src/app/list.component/list.component.js</script>
                 </scripts>
-                <styles>
-                    <style>/src/app.css</style>
-                </styles>
             </template>
         </templates>
         <services>
@@ -67,9 +67,7 @@
             <service environment="TEST" type="restful" name="addNote" url="https://widgetservice.test.optadata-one.de/notice" method="PUT"></service>
             <service environment="TEST" type="restful" name="updateNote" url="https://widgetservice.test.optadata-one.de/notice/{id}" method="POST"></service>
             <service environment="TEST" type="restful" name="deleteNote" url="https://widgetservice.test.optadata-one.de/notice/{id}" method="DELETE"></service>
-            
-            
-            </services>
+        </services>
     </ressources>
 </widget>
 
