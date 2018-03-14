@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget id="oddc.notes" builder="3.0.0">
+<widget id="oddc.notes" builder="3.0.0" icon="icon.png">
     <information>
         <name lang="de-DE">Notizen</name>
-        <version>2.0.26</version>
+        <version>2.0.3</version>
         <author>
             <company>opta data Gruppe</company>
             <telephone>0201 31960</telephone>
@@ -21,7 +21,10 @@
             </text>
         </summary>
         <description lang="de-DE">
-            <image>/ressources/images/big.jpg</image>
+            <media>
+                <image>/ressources/images/small.jpg</image>
+                <image>/ressources/images/big.jpg</image>
+            </media>
             <text type="textile">
                 Das Widget ersetzt den Notizblock auf Ihrem Schreibtisch. Egal wo Sie sind: Notieren Sie sich Ihre wichtigen Dinge einfach in diesem Widget und greifen Sie jederzeit darauf zu.
             </text>
@@ -31,6 +34,7 @@
             <text-appearance>light</text-appearance>
             <main-color>#F1C40F</main-color>
         </appearance>
+        <productgroup>odone.interne.widgets</productgroup>
     </information>
     <ressources>
         <templates lang="de-DE">

@@ -25,7 +25,7 @@
                      notes = response;
                      $rootScope.$broadcast('rebuild:scrollbars');
                      return notes;
-                 });
+                }, errorMsg);
             }
 
             function loadNote(noteId) {
@@ -44,6 +44,10 @@
                 return widgetServices.callService('deleteNote', noteId).then(function(response){
                     return response;
                 });
+            }
+
+            function errorMsg(error) {
+                return {error: true, msg: error};
             }
 
 

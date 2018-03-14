@@ -11,8 +11,11 @@
 </div>
 
 
-<div class="panel-spacing" ng-if="$ctrl.contentLoaded && !$ctrl.notes.length">
-    <div class="alert alert-warning">
+<div class="panel-spacing" ng-if="$ctrl.contentLoaded">
+    <div class="alert alert-warning" ng-if="!$ctrl.notes.length && !$ctrl.error">
         <span class="icon icon-info"></span> Sie haben noch keine Notizen angelegt.
+    </div>
+    <div class="alert alert-danger" ng-if="$ctrl.error">
+        <span class="icon icon-info"></span> Es ist ein Fehler beim laden der Notizen aufgetreten!
     </div>
 </div>
