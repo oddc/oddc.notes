@@ -17,8 +17,9 @@
                         }
                         else {
                             self.error = true;
-                            self.contentLoaded = true;
                         }
+
+                        self.contentLoaded = true;
                     });
                 self.select = function(noteId) {
                     $state.go('edit', {id: noteId});

@@ -2,7 +2,8 @@
 <widget id="oddc.notes" builder="3.0.0" icon="icon.png">
     <information>
         <name lang="de-DE">Notizen</name>
-        <version>2.0.3</version>
+		<shortname lang="de-DE">Notizen</shortname>
+        <version>2.0.5</version>
         <author>
             <company>opta data Gruppe</company>
             <telephone>0201 31960</telephone>
