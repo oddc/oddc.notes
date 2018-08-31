@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget id="oddc.notes" builder="3.0.0" icon="icon.png">
+<widget id="oddc.notes" builder="3.0.0" icon="/ressources/images/icon.png">
     <information>
         <name lang="de-DE">Notizen</name>
 		<shortname lang="de-DE">Notizen</shortname>
