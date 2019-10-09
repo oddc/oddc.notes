@@ -3,7 +3,7 @@
     <information>
         <name lang="de-DE">Notizen</name>
 		<shortname lang="de-DE">Notizen</shortname>
-        <version>2.0.7</version>
+        <version>2.0.8</version>
         <author>
             <company>opta data Gruppe</company>
             <telephone>0201 31960</telephone>
@@ -36,6 +36,14 @@
             <main-color>#F1C40F</main-color>
         </appearance>
         <productgroup>odone.interne.widgets</productgroup>
+        <tutorial>
+            <helptext lang="de-DE">
+                Im Notizenwidget können Sie Notizen speichern.
+                Klicken Sie dazu auf das Plus-Symbol und geben Sie eine Notiz ein. Ein separates Speichern ist nicht nötig, mit Klick auf den „Zurück“-Pfeil oben links ist die Notiz gesichert.
+                Notizen können Sie momentan nicht aus dem Widget heraus teilen, Sie können aber die Notiz kopieren und via Chat an Dritte senden.
+            </helptext>
+            <image>/ressources/images/small.png</image>
+        </tutorial>
     </information>
     <ressources>
         <templates lang="de-DE">
