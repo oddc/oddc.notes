@@ -43,9 +43,7 @@
 
 
             self.deleteNote = function() {
-                odNotes.deleteNote({id : $stateParams.id}).then(function(response){
-                    widgetState.go('list');
-                });
+                widgetState.go('note-delete', { id: self.noteId });
             };
 
 

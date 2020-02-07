@@ -14,6 +14,10 @@
                     url: '/note/:id',
                     template: '<note></note>'
                 })
+                .state('note-delete', {
+                    url: '/note/:id/delete',
+                    template: '<delete-confirm></delete-confirm>'
+                })
                 .state('share', {
                     url: '/share/:id',
                     template: '<share></share>'
