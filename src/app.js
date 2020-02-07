@@ -8,24 +8,15 @@
             $stateProvider
                 .state('list', {
                     url: '/',
-                    template: '<list></list>',
-                    data: {
-                        cssClassNames : 'list'
-                    }
+                    template: '<list></list>'
                 })
-                .state('add', {
-                    url: '/add',
-                    template: '<add></add>',
-                    data: {
-                        cssClassNames : 'add'
-                    }
+                .state('note', {
+                    url: '/note/:id',
+                    template: '<note></note>'
                 })
-                .state('edit', {
-                    url: '/edit/:id',
-                    template: '<edit></edit>',
-                    data: {
-                        cssClassNames : 'edit'
-                    }
+                .state('share', {
+                    url: '/share/:id',
+                    template: '<share></share>'
                 });
 
             $urlRouterProvider.otherwise('/');

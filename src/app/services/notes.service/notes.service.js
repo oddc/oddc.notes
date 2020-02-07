@@ -10,7 +10,8 @@
                 loadNote: loadNote,
                 addNote : addNote,
                 updateNote : updateNote,
-                deleteNote : deleteNote
+                deleteNote : deleteNote,
+                readUsers: readUsers
             };
 
             function addNote(note) {
@@ -42,6 +43,12 @@
 
             function deleteNote(noteId) {
                 return widgetServices.callService('deleteNote', noteId).then(function(response){
+                    return response;
+                });
+            }
+
+            function readUsers() {
+                return widgetServices.callService('readUsers').then(function(response){
                     return response;
                 });
             }

@@ -1,0 +1,8 @@
+
+<div class="btn-switch" ng-class="{'btn-switch--on' : ctrl.isOn}" ng-model="ctrl.isOn" ng-click="ctrl.isOn = !ctrl.isOn">
+
+    <div class="btn-switch-circle" ng-class="{'btn-switch-circle--on' : ctrl.isOn}" ng-model="ctrl.isOn"></div>
+
+    <span class="off-text" ng-if="!ctrl.isOn">Nein</span>
+    <span class="on-text" ng-if="ctrl.isOn">Ja</span>
+</div>

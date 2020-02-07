@@ -69,18 +69,21 @@
             <service environment="DEV" type="restful" name="addNote" url="http://wildfly.optadata.com:8080/odone.widgetservices/notice" method="PUT"></service>
             <service environment="DEV" type="restful" name="updateNote" url="http://wildfly.optadata.com:8080/odone.widgetservices/notice/{id}" method="POST"></service>
             <service environment="DEV" type="restful" name="deleteNote" url="http://wildfly.optadata.com:8080/odone.widgetservices/notice/{id}" method="DELETE"></service>
+            <service environment="DEV" type="restful" name="readUsers" url="http://wildfly.optadata.com:8080/odone.business/users" method="GET"></service>
 
             <service environment="PROD" type="restful" name="loadNotes" url="https://widgetservice.optadata-one.de/notice" method="GET"></service>
             <service environment="PROD" type="restful" name="loadNote" url="https://widgetservice.optadata-one.de/notice/{id}" method="GET"></service>
             <service environment="PROD" type="restful" name="addNote" url="https://widgetservice.optadata-one.de/notice" method="PUT"></service>
             <service environment="PROD" type="restful" name="updateNote" url="https://widgetservice.optadata-one.de/notice/{id}" method="POST"></service>
             <service environment="PROD" type="restful" name="deleteNote" url="https://widgetservice.optadata-one.de/notice/{id}" method="DELETE"></service>
+            <service environment="PROD" type="restful" name="readUsers" url="https://biz.optadata-one.de/users" method="GET"></service>
 
             <service environment="TEST" type="restful" name="loadNotes" url="https://widgetservice.test.optadata-one.de/notice" method="GET"></service>
             <service environment="TEST" type="restful" name="loadNote" url="https://widgetservice.test.optadata-one.de/notice/{id}" method="GET"></service>
             <service environment="TEST" type="restful" name="addNote" url="https://widgetservice.test.optadata-one.de/notice" method="PUT"></service>
             <service environment="TEST" type="restful" name="updateNote" url="https://widgetservice.test.optadata-one.de/notice/{id}" method="POST"></service>
             <service environment="TEST" type="restful" name="deleteNote" url="https://widgetservice.test.optadata-one.de/notice/{id}" method="DELETE"></service>
+            <service environment="TEST" type="restful" name="readUsers" url="https://biz.test.optadata-one.de/users" method="GET"></service>
         </services>
     </ressources>
 </widget>
