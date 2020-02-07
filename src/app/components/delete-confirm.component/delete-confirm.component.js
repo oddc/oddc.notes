@@ -4,13 +4,13 @@
     angular.module('oddc.notes')
         .component('deleteConfirm', {
             templateUrl : 'src/app/components/delete-confirm.component/delete-confirm.component.html',
-            controller : shareController,
+            controller : deleteConfirmController,
             controllerAs : 'ctrl'
         });
 
-        shareController.$inject = ['$stateParams', 'odNotes', 'widgetState'];
+        deleteConfirmController.$inject = ['$stateParams', 'odNotes', 'widgetState'];
 
-        function shareController($stateParams, odNotes, widgetState) {
+        function deleteConfirmController($stateParams, odNotes, widgetState) {
             var self = this;
             self.loaded = false;
             self.note = null;

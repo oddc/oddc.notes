@@ -4,16 +4,16 @@
     angular.module('oddc.notes')
         .component('switchBtn', {
             templateUrl : 'src/app/components/switch.component/switch.component.html',
-            controller : shareController,
+            controller : switchBtnController,
             controllerAs : 'ctrl',
             bindings: {
                 isOn: '='
             }
         });
 
-        shareController.$inject = [];
+        switchBtnController.$inject = [];
 
-        function shareController() {
+        function switchBtnController() {
             var self = this;
             self.loaded = false;
 

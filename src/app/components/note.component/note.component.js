@@ -48,7 +48,7 @@
 
 
             self.deleteNote = function() {
-                widgetState.go('note-delete', { id: self.noteId });
+                widgetState.go('delete', { id: self.noteId });
             };
 
 
@@ -74,8 +74,8 @@
             };
 
 
-            self.openFileManagment = function () {
-
+            self.openFileManagement = function () {
+                widgetState.go('files.list', { id: self.noteId });
             };
 
 

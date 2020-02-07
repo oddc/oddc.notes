@@ -60,6 +60,8 @@
                     <script>/src/app/components/note.component/note.component.js</script>
                     <script>/src/app/components/list.component/list.component.js</script>
                     <script>/src/app/components/share.component/share.component.js</script>
+                    <script>/src/app/components/file-management.component/file-management.component.js</script>
+                    <script>/src/app/components/file-management.component/file-list.component/file-list.component.js</script>
                 </scripts>
             </template>
         </templates>
