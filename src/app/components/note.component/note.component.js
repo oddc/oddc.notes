@@ -17,6 +17,7 @@
             self.noteId = $stateParams.id;
             self.isNew = self.noteId === 'new';
             self.loaded = false;
+            self.showTitle = false;
 
 
             widgetState.setBackButtonState('list');
@@ -27,6 +28,10 @@
                     odNotes.loadNote(self.noteId).then(function(response) {
                         self.note = response;
                         self.loaded = true;
+
+                        if (self.note.title.trim() !== '') {
+                            self.showTitle = true;
+                        }
                     });
                 }
                 else {
@@ -66,6 +71,11 @@
 
             self.shareNote = function () {
                 widgetState.go('share', { id: self.noteId });
+            };
+
+
+            self.openFileManagment = function () {
+
             };
 
 

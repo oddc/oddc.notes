@@ -9,7 +9,7 @@
 
             <ul class="list-group">
                 <li ng-repeat="note in ctrl.notes | orderBy:'-modifiedAt'" ng-click="ctrl.select(note.id)" class="list-group-item item-hover">
-                    {{ note.title }}
+                    <span ng-bind-html="ctrl.getTitle(note)"></span>
                     <span class="date-list" am-time-ago="note.modifiedAt"></span>
                     <span class="icon icon-chevron-right"></span>
                 </li>

@@ -21,6 +21,7 @@
                 odNotes.loadNotes().then(function(result) {
                     if(result.error === undefined) {
                         self.notes = result;
+                        console.log(self.notes);
                     }
                     else {
                         self.error = true;
@@ -38,6 +39,18 @@
 
             self.openNewNode = function () {
                 $state.go('note', { id: 'new' });
+            };
+
+
+            self.getTitle = function (note) {
+                if (note.title === '') {
+                    var title = note.body.substring(0, 50);
+                    if (note.body.length > 50) {
+                        title += ' ...';
+                    }
+                    return title;
+                }
+                return note.title;
             };
 
         }
