@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('oddc.notes', ['widgetbuilder', 'ngFileUpload'])
+    angular.module('oddc.notes', ['widgetbuilder', 'ngFileUpload', 'ngStorage'])
 
         .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
@@ -33,6 +33,10 @@
                 .state('files.upload', {
                     url: '/upload',
                     template: '<file-upload></file-upload>&'
+                })
+                .state('files.details', {
+                    url: '/details/:fileid',
+                    template: '<files-details></files-details>'
                 });
 
 

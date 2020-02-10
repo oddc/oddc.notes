@@ -8,9 +8,9 @@
             controllerAs : 'ctrl'
         });
 
-        fileListController.$inject = ['widgetState', '$state', 'odNotes', '$stateParams'];
+        fileListController.$inject = ['widgetState', '$state', 'odNotes', '$stateParams', '$sessionStorage'];
 
-        function fileListController(widgetState, $state, odNotes, $stateParams) {
+        function fileListController(widgetState, $state, odNotes, $stateParams, $sessionStorage) {
             var self = this;
             self.$state = $state;
             self.noteId = $stateParams.id;
@@ -23,19 +23,21 @@
 
 
             self.$onInit = function () {
-                odNotes.loadNote(self.noteId).then(function (result) {
-                    console.log(result);
-                    if (result.documentIds !== undefined) {
-                        self.files = result.documentIds;
-                    }
+                odNotes.getDocuments(self.noteId).then(function (result) {
+                    self.files = result;
+                    self.loaded = true;
                 });
-
-                self.loaded = true;
             };
 
 
             self.uploadFile = function () {
                 widgetState.go('files.upload', { id: self.noteId });
+            };
+
+
+            self.openFile = function (file) {
+                $sessionStorage.file = { noteid: self.noteId, file: file};
+                widgetState.go('files.details', { id: self.noteId, fileid: file.id });
             };
 
 

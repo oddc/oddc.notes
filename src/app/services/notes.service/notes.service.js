@@ -11,7 +11,8 @@
                 addNote : addNote,
                 updateNote : updateNote,
                 deleteNote : deleteNote,
-                readUsers: readUsers
+                readUsers: readUsers,
+                getDocuments: getDocuments
             };
 
             function addNote(note) {
@@ -49,6 +50,12 @@
 
             function readUsers() {
                 return widgetServices.callService('readUsers').then(function(response){
+                    return response;
+                });
+            }
+
+            function getDocuments(noteId) {
+                return widgetServices.callService('getDocuments', { id: noteId}, function (response) {
                     return response;
                 });
             }

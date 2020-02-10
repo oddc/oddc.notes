@@ -1,11 +1,11 @@
 
-<div class="action-box" style="padding: 0px;" ng-if="!ctrl.isLoading">
+<div class="action-box" style="padding: 0px;" ng-if="ctrl.loaded">
     <div class="list-group">
         <div class="alert alert-warning" style="margin-top: 5px;" ng-if="ctrl.error !== ''">
             <span class="icon icon-exclamation-triangle"></span> {{ctrl.error}}
         </div>
 
-        <button type="button" class="list-group-item" ng-repeat="file in ctrl.files" ng-click="ctrl.openFile(file.id)">
+        <button type="button" class="list-group-item" ng-repeat="file in ctrl.files" ng-click="ctrl.openFile(file)">
             {{file.filename}}
             <span class="badge">{{file.createdAt | date:'dd.MM.yyyy'}}</span>
         </button>
