@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('oddc.notes', ['widgetbuilder'])
+    angular.module('oddc.notes', ['widgetbuilder', 'ngFileUpload'])
 
         .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
 
@@ -29,7 +29,12 @@
                 .state('files.list', {
                     url: '/list',
                     template: '<file-list></file-list>'
+                })
+                .state('files.upload', {
+                    url: '/upload',
+                    template: '<file-upload></file-upload>&'
                 });
+
 
             $urlRouterProvider.otherwise('/');
 

@@ -23,7 +23,19 @@
 
 
             self.$onInit = function () {
+                odNotes.loadNote(self.noteId).then(function (result) {
+                    console.log(result);
+                    if (result.documentIds !== undefined) {
+                        self.files = result.documentIds;
+                    }
+                });
+
                 self.loaded = true;
+            };
+
+
+            self.uploadFile = function () {
+                widgetState.go('files.upload', { id: self.noteId });
             };
 
 
