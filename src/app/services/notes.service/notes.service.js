@@ -12,7 +12,9 @@
                 updateNote : updateNote,
                 deleteNote : deleteNote,
                 readUsers: readUsers,
-                getDocuments: getDocuments
+                getDocuments: getDocuments,
+                getTaskLists: getTaskLists,
+                convertToTask: convertToTask
             };
 
             function addNote(note) {
@@ -55,7 +57,19 @@
             }
 
             function getDocuments(noteId) {
-                return widgetServices.callService('getDocuments', { id: noteId}, function (response) {
+                return widgetServices.callService('getDocuments', { id: noteId}).then(function (response) {
+                    return response;
+                })
+            }
+
+            function getTaskLists() {
+                return widgetServices.callService('getTaskLists').then(function (response) {
+                    return response;
+                });
+            }
+
+            function convertToTask(noteId, taskListId) {
+                return widgetServices.callService('convertToTask', { id: noteId, taskListId: taskListId }).then(function (response) {
                     return response;
                 });
             }

@@ -27,7 +27,6 @@
                 if (!self.isNew) {
                     odNotes.loadNote(self.noteId).then(function(response) {
                         self.note = response;
-                        console.log(self.note);
                         self.loaded = true;
 
                         if (self.note.title.trim() !== '') {
@@ -81,7 +80,7 @@
 
 
             self.noteToTask = function () {
-
+                widgetState.go('convert', { id: self.noteId });
             };
 
         }

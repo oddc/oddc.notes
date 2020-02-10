@@ -41,6 +41,10 @@
                 .state('files.delete', {
                     url: '/delete/:fileid',
                     template: '<file-delete></file-delete>'
+                })
+                .state('convert', {
+                    url: '/convert/:id',
+                    template: '<convert-to-task></convert-to-task>'
                 });
 
 

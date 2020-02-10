@@ -17,6 +17,9 @@
             self.noteId = $stateParams.id;
 
 
+            widgetState.setBackButtonState('note', { id: self.noteId });
+
+
             self.$onInit = function () {
                 odNotes.loadNote(self.noteId).then(function(response) {
                     self.note = response;

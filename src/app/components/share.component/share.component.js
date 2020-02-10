@@ -36,9 +36,6 @@
                         });
 
                         self.loaded = true;
-
-                        console.log('NOTE',  self.note);
-                        console.log('USERS', self.users);
                     });
                 });
             };

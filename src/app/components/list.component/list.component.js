@@ -21,7 +21,6 @@
                 odNotes.loadNotes().then(function(result) {
                     if(result.error === undefined) {
                         self.notes = result;
-                        console.log(self.notes);
                     }
                     else {
                         self.error = true;
