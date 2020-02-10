@@ -37,6 +37,10 @@
                 .state('files.details', {
                     url: '/details/:fileid',
                     template: '<files-details></files-details>'
+                })
+                .state('files.delete', {
+                    url: '/delete/:fileid',
+                    template: '<file-delete></file-delete>'
                 });
 
 

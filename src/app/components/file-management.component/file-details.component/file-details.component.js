@@ -13,14 +13,17 @@
     function filesDetailsController($stateParams, widgetState, $sessionStorage) {
         var self = this;
         self.$onInit = $onInit;
-        self.nodeId = $stateParams.id;
+        self.noteId = $stateParams.id;
         self.fileId = $stateParams.fileid;
         self.file = null;
 
 
+        widgetState.setBackButtonState('files.list', { id: self.noteId });
+
+
         function $onInit() {
-            if ($sessionStorage.file !== undefined) {
-                if ($sessionStorage.file.noteid === self.nodeId && $sessionStorage.file.file.id === self.fileId) {
+            if ($sessionStorage.file !== undefined || $sessionStorage.file !== null) {
+                if ($sessionStorage.file.noteid === self.noteId && $sessionStorage.file.file.id === self.fileId) {
                     self.file = $sessionStorage.file.file;
                 }
             }
@@ -28,12 +31,12 @@
 
 
         self.cancel = function () {
-            widgetState.go('files.list', { id: self.nodeId });
+            widgetState.go('files.list', { id: self.noteId });
         };
 
 
         self.delete = function () {
-            widgetState.go('tasks.filedelete', { listid: $stateParams.listid, taskid: $stateParams.taskid, fileid: $stateParams.fileid });
+            widgetState.go('files.delete', { id: self.noteId, fileid: self.fileId });
         };
     }
 

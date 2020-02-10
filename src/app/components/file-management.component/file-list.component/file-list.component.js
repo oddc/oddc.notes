@@ -24,8 +24,14 @@
 
             self.$onInit = function () {
                 odNotes.getDocuments(self.noteId).then(function (result) {
-                    self.files = result;
-                    self.loaded = true;
+                    if (!result.error) {
+                        self.files = result;
+                        self.loaded = true;
+                    }
+                    else {
+                        self.error = result.message;
+                        self.loaded = true;
+                    }
                 });
             };
 

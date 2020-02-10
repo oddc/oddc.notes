@@ -67,6 +67,7 @@
                     <script>/src/app/components/file-management.component/file-list.component/file-list.component.js</script>
                     <script>/src/app/components/file-management.component/file-upload.component/file-upload.component.js</script>
                     <script>/src/app/components/file-management.component/file-details.component/file-details.component.js</script>
+                    <script>/src/app/components/file-management.component/file-delete.component/file-delete.component.js</script>
                 </scripts>
             </template>
         </templates>
