@@ -32,7 +32,7 @@
                 })
                 .state('files.upload', {
                     url: '/upload',
-                    template: '<file-upload></file-upload>&'
+                    template: '<file-upload></file-upload>'
                 })
                 .state('files.details', {
                     url: '/details/:fileid',
