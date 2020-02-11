@@ -8,9 +8,9 @@
             controllerAs : 'ctrl'
         });
 
-        noteController.$inject = ['widgetState', '$state', 'odNotes', '$stateParams'];
+        noteController.$inject = ['widgetState', '$state', 'odNotes', '$stateParams', '$sessionStorage'];
 
-        function noteController(widgetState, $state, odNotes, $stateParams) {
+        function noteController(widgetState, $state, odNotes, $stateParams, $sessionStorage) {
             var self = this;
             self.$state = $state;
             self.note = { title:'', body:'' };
@@ -28,6 +28,7 @@
                     odNotes.loadNote(self.noteId).then(function(response) {
                         self.note = response;
                         self.loaded = true;
+                        $sessionStorage.noteOpenId = self.note.userId;
 
                         if (self.note.title.trim() !== '') {
                             self.showTitle = true;
@@ -81,6 +82,19 @@
 
             self.noteToTask = function () {
                 widgetState.go('convert', { id: self.noteId });
+            };
+
+
+            self.canSave = function () {
+                if (self.isNew) {
+                    return true;
+                }
+
+                if (odNotes.getCurrentUser() === null || $sessionStorage.noteOpenId === undefined) {
+                    return false;
+                }
+
+                return $sessionStorage.noteOpenId === odNotes.getCurrentUser().openId;
             };
 
         }

@@ -14,11 +14,11 @@
 
     </div>
 
-    <div class="col-xs-10">
+    <div ng-class="{'col-xs-10': ctrl.canSave(), 'col-xs-12': !ctrl.canSave()}">
         <a class="btn btn-primary btn-block" target="_self" href="{{ctrl.file.fullPath}}" download="{{ctrl.file.filename}}">Download</a>
     </div>
 
-    <div class="col-xs-2">
+    <div class="col-xs-2" ng-if="ctrl.canSave()">
         <button class="btn btn-danger btn-block" ng-click="ctrl.delete();"><span class="glyphicon glyphicon-trash"></span></button>
     </div>
 

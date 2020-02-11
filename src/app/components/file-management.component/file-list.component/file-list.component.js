@@ -47,6 +47,17 @@
             };
 
 
+            self.canSave = function () {
+                if (self.isNew) {
+                    return true;
+                }
+
+                if (odNotes.getCurrentUser() === null || $sessionStorage.noteOpenId === undefined) {
+                    return false;
+                }
+
+                return $sessionStorage.noteOpenId === odNotes.getCurrentUser().openId;
+            };
 
 
         }

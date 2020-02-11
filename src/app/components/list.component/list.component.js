@@ -18,6 +18,8 @@
 
 
             self.$onInit = function () {
+                odNotes.loadCurrentUser();
+
                 odNotes.loadNotes().then(function(result) {
                     if(result.error === undefined) {
                         self.notes = result;

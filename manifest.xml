@@ -82,6 +82,7 @@
             <service environment="DEV" type="restful" name="convertToTask" url="http://wildfly.optadata.com:8080/odone.widgetservices/notice/convert/{id}/{taskListId}" method="POST"></service>
             <service environment="DEV" type="restful" name="getTaskLists" url="http://wildfly.optadata.com:8080/odone.widgetservices/tasklist" method="GET"></service>
             <service environment="DEV" type="restful" name="readUsers" url="http://wildfly.optadata.com:8080/odone.business/users" method="GET"></service>
+            <service environment="DEV" type="restful" name="currentUser" url="http://wildfly.optadata.com:8080/odone.business/users/current" method="GET"></service>
 
             <service environment="PROD" type="restful" name="loadNotes" url="https://widgetservice.optadata-one.de/notice" method="GET"></service>
             <service environment="PROD" type="restful" name="loadNote" url="https://widgetservice.optadata-one.de/notice/{id}" method="GET"></service>
@@ -92,6 +93,7 @@
             <service environment="PROD" type="restful" name="convertToTask" url="https://widgetservice.optadata-one.de/notice/convert/{id}/{taskListId}" method="POST"></service>
             <service environment="PROD" type="restful" name="getTaskLists" url="https://widgetservice.optadata-one.de/tasklist" method="GET"></service>
             <service environment="PROD" type="restful" name="readUsers" url="https://biz.optadata-one.de/users" method="GET"></service>
+            <service environment="PROD" type="restful" name="currentUser" url="https://biz.optadata-one.de/users/current" method="GET"></service>
 
             <service environment="TEST" type="restful" name="loadNotes" url="https://widgetservice.test.optadata-one.de/notice" method="GET"></service>
             <service environment="TEST" type="restful" name="loadNote" url="https://widgetservice.test.optadata-one.de/notice/{id}" method="GET"></service>
@@ -102,6 +104,7 @@
             <service environment="TEST" type="restful" name="convertToTask" url="https://widgetservice.test.optadata-one.de/notice/convert/{id}/{taskListId}" method="POST"></service>
             <service environment="TEST" type="restful" name="getTaskLists" url="https://widgetservice.test.optadata-one.de/tasklist" method="GET"></service>
             <service environment="TEST" type="restful" name="readUsers" url="https://biz.test.optadata-one.de/users" method="GET"></service>
+            <service environment="TEST" type="restful" name="currentUser" url="https://biz.test.optadata-one.de/users/current" method="GET"></service>
         </services>
     </ressources>
 </widget>

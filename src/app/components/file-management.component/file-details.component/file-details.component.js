@@ -9,8 +9,8 @@
             controllerAs: 'ctrl',
         });
 
-    filesDetailsController.$inject = ['$stateParams', 'widgetState', '$sessionStorage'];
-    function filesDetailsController($stateParams, widgetState, $sessionStorage) {
+    filesDetailsController.$inject = ['$stateParams', 'widgetState', '$sessionStorage', 'odNotes'];
+    function filesDetailsController($stateParams, widgetState, $sessionStorage, odNotes) {
         var self = this;
         self.$onInit = $onInit;
         self.noteId = $stateParams.id;
@@ -37,6 +37,19 @@
 
         self.delete = function () {
             widgetState.go('files.delete', { id: self.noteId, fileid: self.fileId });
+        };
+
+
+        self.canSave = function () {
+            if (self.isNew) {
+                return true;
+            }
+
+            if (odNotes.getCurrentUser() === null || $sessionStorage.noteOpenId === undefined) {
+                return false;
+            }
+
+            return $sessionStorage.noteOpenId === odNotes.getCurrentUser().openId;
         };
     }
 

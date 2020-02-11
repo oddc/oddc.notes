@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('widgetbuilder')
-        .factory('odNotes', ['$log', 'widgetServices', '$rootScope', function ($log, widgetServices, $rootScope) {
+        .factory('odNotes', ['$log', 'widgetServices', '$rootScope', '$sessionStorage', function ($log, widgetServices, $rootScope, $sessionStorage) {
             var notes = [];
 
             return {
@@ -14,7 +14,9 @@
                 readUsers: readUsers,
                 getDocuments: getDocuments,
                 getTaskLists: getTaskLists,
-                convertToTask: convertToTask
+                convertToTask: convertToTask,
+                loadCurrentUser: loadCurrentUser,
+                getCurrentUser: getCurrentUser
             };
 
             function addNote(note) {
@@ -72,6 +74,18 @@
                 return widgetServices.callService('convertToTask', { id: noteId, taskListId: taskListId }).then(function (response) {
                     return response;
                 });
+            }
+
+            function loadCurrentUser() {
+                if ($sessionStorage.currentUser === undefined) {
+                    widgetServices.callService('currentUser').then(function (response) {
+                        $sessionStorage.currentUser = response;
+                    });
+                }
+            }
+
+            function getCurrentUser() {
+                return $sessionStorage.currentUser === undefined ? null : $sessionStorage.currentUser;
             }
 
             function errorMsg(error) {
