@@ -38,7 +38,7 @@
 
             var apiUrls = {
                 DEV: 'http://wildfly.optadata.com:8080',
-                TEST: 'https://widgetservice.test.optadata-one.de',
+                TEST: 'https://biz.test.optadata-one.de',
                 PROD: 'https://widgetservice.optadata-one.de'
             };
 
